@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "dist": "electron-builder"
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder -w appx"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -27,13 +28,8 @@
   },
   "build": {
     "appId": "org.breta.MemoryKing",
-    "mac": {
-      "category": "public.app-category.education",
-      "target": ["dmg"]
-    },
     "linux": {
       "target": ["apk"]
-    },
-    "win": null
+    }
   }
 }
