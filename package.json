@@ -31,9 +31,6 @@
       "category": "public.app-category.education",
       "target": ["dmg"]
     },
-    "win": {
-      "target": ["appx"]
-    },
     "linux": {
       "target": ["apk"]
     }
