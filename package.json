@@ -32,7 +32,7 @@
       "target": ["dmg"]
     },
     "linux": {
-      "target": ["apk"],
+      "target": ["apk"]
     },
     "win": null
   }
