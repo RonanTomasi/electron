@@ -4,7 +4,8 @@
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "dist": "npm run build && build --publish onTagOrDraft"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -14,9 +15,48 @@
     "tutorial",
     "demo"
   ],
-  "author": "GitHub",
+  "author": {
+    "name": "Sam Ton That",
+    "email": "sam@draft.do",
+    "url": "https://draft.do"
+  },
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "~1.6.2"
+    "electron": "~1.6.2",
+    "electron-builder": "^19.19.1"
+  },
+  "build": {
+    "appId": "org.breta.MemoryKing",
+    "category": "public.app-category.education",
+    "files": [
+      "dist/",
+      "node_modules/",
+      "static/",
+      "main.js",
+      "index.html",
+      "package.json"
+    ],
+    "dmg": {
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": [
+        "apk"
+      ]
+    }
   }
 }
