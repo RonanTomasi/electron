@@ -6,7 +6,7 @@
   "scripts": {
     "start": "electron .",
     "pack": "electron-builder --dir",
-    "dist": "CSC_LINK=./cert.p12 CSC_KEY_PASSWORD=azerty electron-builder -w appx"
+    "dist": "electron-builder -l apk"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -25,11 +25,5 @@
   "devDependencies": {
     "electron": "~1.6.2",
     "electron-builder": "^19.19.1"
-  },
-  "build": {
-    "appId": "org.breta.MemoryKing",
-    "linux": {
-      "target": ["apk"]
-    }
   }
 }
