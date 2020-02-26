@@ -14,6 +14,7 @@ let mainWindow
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow()
+  mainWindow.setBackgroundColor('#181818');
   mainWindow.maximize()
 
   // and load the index.html of the app.
@@ -25,7 +26,7 @@ function createWindow () {
   }))
 
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {

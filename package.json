@@ -1,14 +1,17 @@
 {
-  "name": "electron",
+  "name": "Draft",
   "version": "1.0.0",
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder -l apk"
+    "dist": "electron-builder -m dmg"
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/electron/electron-quick-start.git"
+  },
   "keywords": [
     "Electron",
     "quick",
@@ -16,14 +19,14 @@
     "tutorial",
     "demo"
   ],
-  "author": {
-    "name": "CN=whatever",
-    "email": "sam@draft.do",
-    "url": "https://draft.do"
-  },
+  "author": "CN=whatever <sam@draft.do> (https://draft.do)",
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "~1.6.2",
-    "electron-builder": "^19.19.1"
-  }
+    "electron-builder": "^19.27.7"
+  },
+  "bugs": {
+    "url": "https://github.com/electron/electron-quick-start/issues"
+  },
+  "homepage": "https://github.com/electron/electron-quick-start#readme"
 }

@@ -10,14 +10,67 @@
         padding : 0;
         margin : 0;
       }
+
+      body {
+        background-color : #181818;
+        font-family : Calibri, sans-serif;
+      }
+
+      * {
+        -webkit-font-smoothing : antialiased;
+      }
+
+      body.offline {
+        color : white;
+      }
+
+      body.offline .picto {
+        background-image : url("./assets/offline.png");
+        width : 120px;
+        height : 120px;
+        background-size : contain;
+        background-repeat : no-repeat;
+        background-position : center;
+        margin-left : calc(50% - 60px);
+      }
+
+      .centered {
+        position : absolute;
+        top : 50%;
+        left : 50%;
+        transform : translate(-50%, -50%);
+      }
+
+      .title {
+        font-size : 24px;
+        text-align : center;
+        margin-top : 40px;
+        margin-bottom : 20px;
+      }
+
+      .instructions:not(:last-child) {
+        margin-bottom : 5px;
+      }
+
+      a {
+        color : white;
+      }
     </style>
   </head>
   <body>
-    <iframe frameborder="0" style="width:100%;height:100%;" src="https://draft.do"></iframe>
   </body>
 
-  <script>
+  <!--<script>
     // You can also require other files to run in this process
     require('./renderer.js')
+  </script>-->
+  <script>
+    var script = document.createElement('script');
+    script.src = "https://draft.io/assets/electron-renderer.js";
+    script.onerror = function() {
+      document.body.setAttribute('class', 'offline');
+      document.body.innerHTML = '<div class="centered"><div class="picto"></div><div class="title">You\'re offline</div><div class="instructions">Please connect to the internet and restart the app.</div><div class="instructions">If problem persists, please contact us at <a href="mailto:support@draft.io">support@draft.io</a></div></div>';
+    }
+    document.body.appendChild(script);
   </script>
 </html>
