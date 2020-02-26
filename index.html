@@ -58,19 +58,18 @@
     </style>
   </head>
   <body>
-  </body>
 
   <!--<script>
     // You can also require other files to run in this process
     require('./renderer.js')
   </script>-->
-  <script>
-    var script = document.createElement('script');
-    script.src = "https://draft.io/assets/electron-renderer.js";
-    script.onerror = function() {
-      document.body.setAttribute('class', 'offline');
-      document.body.innerHTML = '<div class="centered"><div class="picto"></div><div class="title">You\'re offline</div><div class="instructions">Please connect to the internet and restart the app.</div><div class="instructions">If problem persists, please contact us at <a href="mailto:support@draft.io">support@draft.io</a></div></div>';
-    }
-    document.body.appendChild(script);
-  </script>
+    <script>
+      function onError(msg, url, lineNo, columnNo, error) {
+        // console.log(msg, url, lineNo, columnNo, error);
+        document.body.setAttribute('class', 'offline');
+        document.body.innerHTML = '<div class="centered"><div class="picto"></div><div class="title">You\'re offline</div><div class="instructions">Please connect to the internet and restart the app.</div><div class="instructions">If problem persists, please contact us at <a href="mailto:support@draft.io">support@draft.io</a></div></div>';
+      }
+    </script>
+    <script src="https://draft.io/assets/electron-renderer.js" onerror="onError()"></script>
+  </body>
 </html>
